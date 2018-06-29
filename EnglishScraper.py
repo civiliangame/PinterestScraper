@@ -1,13 +1,5 @@
 #Import necessary libraries
-from bs4 import BeautifulSoup
-import requests
-import re
 from urllib.request import urlretrieve
-import urllib.parse
-import urllib
-from selenium import *
-from selenium import webdriver
-import pickle
 import os.path
 import os
 
@@ -23,7 +15,7 @@ class ScrapingEssentials(object):
     def __init__(self, source):
         ScrapingEssentials.number = 0
         self.source = source
-        file_path_string = "/sxh779/Crawler/" + source
+        file_path_string = "/Users/nowib/Documents/PinterestScraper/Crawler/" + source
         if not os.path.exists(file_path_string):
             os.makedirs(file_path_string)
     # Needed to make a class to have a static way of counting
@@ -39,9 +31,8 @@ class ScrapingEssentials(object):
             #Make a folder name
             folder_name = ScrapingEssentials.categories[ScrapingEssentials.currentItem]
             print(link)
-            r2 = requests.get(link)
             #Make the directory of the folder
-            file_path_string = "/sxh779/Crawler/" + self.source + "/" + folder_name
+            file_path_string = "/Users/nowib/Documents/PinterestScraper/Crawler/" + self.source + "/" + folder_name
             file_path = os.path.join(file_path_string, (str(ScrapingEssentials.number) + ".jpg"))
 
             if not os.path.exists(file_path_string):
@@ -52,23 +43,12 @@ class ScrapingEssentials(object):
 
             urlretrieve(link, file_path)
 
-            done = True
+            print
         except Exception:
             pass
 
-
-    def open_pickle(self):
-        keywords = []
-        # with open("category_python3.pkl", "rb") as f:
-        #     data = pickle.load(f)
-        #     for key in data.keys():
-        #         for value in data[key]:
-        #             keywords.append(value.split("_")[0])
-        # ScrapingEssentials.list = keywords
-        return ScrapingEssentials.categories
-
     def english_pickle(self):
         ScrapingEssentials.categories = [
-            "Starcraft", "Overwatch", "Terran", "Zerg", "Protoss"
+            "Hyundai", "Kia"
         ]
         return ScrapingEssentials.categories

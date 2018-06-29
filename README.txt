@@ -5,10 +5,18 @@ Useless as they may be individually, they have potential to be significant toget
 For instance, let's say that you're making a general object detector with machine learning.
 How will you teach it to recognize things?
 
-You'll most likely require a huge database for your machine to train upon.
+You'll most likely require a huge image database for your machine to train upon.
 This project provides that database. 
 
 You can search for ANY keyword, and the program will download ALL images pinterest has on that subject. 
+
+My project will be using the following libraries: 
+BeautifulSoup (for parsing HTML)
+time (to time out the project if it hits no more results)
+selenium (to retreive the webdriver)
+urlretrieve (to download the image file from a url)
+OS (for I/O operations) 
+threads (for multithreading) 
 
 This is the gist of how it works: 
 1. Two Selenium webdrivers are created. For the sake of simplicity and transparency, we will use Chrome.
@@ -31,4 +39,6 @@ This is the gist of how it works:
 
 To run it, make sure you have Python on your computer first.
 Then, make sure to run the PintrestScraper file from that directory. It will NOT work without chromedriver.exe and EnglishScraper.py in the same directory. 
-Enjoy, and don't do illegal stuff with it.
+Just click run. No input parameters needed. 
+If you want to change what kind of images you want to download, go to EnglishScraper.py and change the categories variable in the last three lines in the code.
+Enjoy, and don't do illegal stuff with it. This is for educational purposes only. In other words, please don't call the FBI on me. 
